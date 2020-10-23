@@ -69,6 +69,10 @@ int main(void)
                         fflush(stdout);
                 }
 
+                if (isLineWhitespace(input)) {
+                        continue;
+                }
+
                 /* Remove trailing newline from command line */
                 nl = strchr(input, '\n');
                 if (nl) {
