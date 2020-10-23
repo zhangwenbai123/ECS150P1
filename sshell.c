@@ -157,12 +157,12 @@ int main(void)
                 // Builtin command
                 if (!strcmp(pipeOfCmds.cmds[0].args[0], "exit")) {
                         if (!fork()) { //Children try to exit.
-                                fprintf(stdout, "Bye...\n");
+                                fprintf(stderr, "Bye...\n");
                                 break;
                         } else {// Parent
                                 int retval;
                                 waitpid(-1, &retval, 0);       // Wait for child to exit
-                                fprintf(stdout, "+ completed '%s' [%d]\n", inputCopy, WEXITSTATUS(retval));
+                                fprintf(stderr, "+ completed '%s' [%d]\n", inputCopy, WEXITSTATUS(retval));
                                 break;
                         }
                 }
