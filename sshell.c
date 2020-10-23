@@ -157,7 +157,7 @@ int main(void)
                 // Builtin command
                 if (!strcmp(pipeOfCmds.cmds[0].args[0], "exit")) {
                         if (!fork()) { //Children try to exit.
-                                fprintf(stderr, "Bye...\n");
+                                fprintf(stdout, "Bye...\n");
                                 break;
                         } else {// Parent
                                 int retval;
