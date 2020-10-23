@@ -23,6 +23,7 @@ typedef struct single_cmd {
         char redirectLoc[REDI_PATH_MAX];
 } single_cmd;
 
+//The pipeline contains array of commands that are seperated by '|'
 typedef struct pipeline {
         single_cmd cmds[PIPELINE_MAX];
         int numPipeInstructions;
